@@ -1,13 +1,14 @@
 package gtunes
 
 import grails.test.mixin.TestFor
-import spock.lang.Specification
+//import spock.lang.Specification
+import org.junit.*
 
 /**
  * See the API for {@link grails.test.mixin.web.ControllerUnitTestMixin} for usage instructions
  */
 @TestFor(StoreController)
-class StoreControllerSpec extends Specification {
+class StoreControllerSpec /*extends Specification*/ {
 
     def setup() {
     }
@@ -16,5 +17,7 @@ class StoreControllerSpec extends Specification {
     }
 
     void "test something"() {
+        controller.index()
+        assert 'Welcome to the gTunes store!' == response.text
     }
 }
